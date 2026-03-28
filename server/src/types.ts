@@ -1,4 +1,4 @@
-import type { WebSocket } from 'ws';
+import type { WebSocket } from "ws";
 
 export interface Player {
   name: string;
@@ -21,10 +21,11 @@ export interface Game {
   id: string;
   code: string;
   hostId: string;
+  hostWs: WebSocket;
   questions: Question[];
   players: Player[];
   currentQuestion: number;
-  status: 'waiting' | 'in_progress' | 'finished';
+  status: "waiting" | "in_progress" | "finished";
   questionStartTime?: number;
   questionTimer?: NodeJS.Timeout;
   playerAnswers: Map<string, { answerIndex: number; timestamp: number }>;
